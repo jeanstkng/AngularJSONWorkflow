@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WorkflowServiceService } from '../workflow-service.service';
 
 @Component({
   selector: 'app-main',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _worktest: WorkflowServiceService) { }
 
   ngOnInit() {
   }
