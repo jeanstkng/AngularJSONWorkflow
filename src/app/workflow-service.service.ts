@@ -25,9 +25,9 @@ export class WorkflowServiceService {
     this.http.get('assets/data/json_workflows.json')
       .subscribe( (resp: JSONWorkflows) => {
 
-        this.workflows = resp;
+        this.workflows = resp[1];
 
-        //  console.log(resp);
+        console.log(resp[1]);
 
       });
 

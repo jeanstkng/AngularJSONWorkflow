@@ -1,12 +1,17 @@
 
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h1 class="mt-5">A Bootstrap 4 Starter Template</h1>
-        <p class="lead">Complete with pre-defined file paths and responsive navigation!</p>
-        <ul class="list-unstyled">
-          <li>Bootstrap 4.3.1</li>
-          <li>jQuery 3.4.1</li>
-        </ul>
+        <h1 class="mt-5"> <a (click)="seeUrl(workflow.workflows.url)" >{{ workflow.workflows.workflow }}</a> </h1>
+        <p class="lead">{{ workflow.workflows.phases.Design.milestones[1].name }}</p>
       </div>
     </div>
-    
+
+    <div class="row">
+      <div class="col-lg-6">
+        <h3 (click)="seeUrl(workflow.workflows.phases.Design.url)"  > {{ workflow.workflows.phases.Design.id }} </h3>
+      </div>
+    </div>
+
+    <input type="button" value="Next phase" onclick="" class="">
+
+
