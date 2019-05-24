@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { WorkflowOneComponent } from '../workflow-one/workflow-one.component';
+import { WorkflowTwoService } from '../workflow-two.service';
 
 @Component({
   selector: 'app-workflow-two',
@@ -7,7 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkflowTwoComponent implements OnInit {
 
-  constructor() { }
+  activityCounter = false;
+  documentCounter = false;
+
+  phase = 1;
+
+  constructor( public workflow: WorkflowTwoService ) { }
+
+  changePhase(phaseNum: number){
+    this.phase = phaseNum;
+  }
+
+  seeUrl(codeName: any){
+    alert(codeName);
+  }
+
+  seeActivities(){
+    this.activityCounter = true;
+  }
+
+  seeDocs(){
+    this.documentCounter = true;
+  }
+
+  goBack(){
+    this.activityCounter = false;
+    this.documentCounter = false;
+  }
 
   ngOnInit() {
   }
