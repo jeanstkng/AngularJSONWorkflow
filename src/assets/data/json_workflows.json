@@ -127,7 +127,7 @@
           }
         }
       },
-      "Validation-Reg-Launch": {
+      "ValidationRegLaunch": {
         "id": 3,
         "url": "show.html?w=1&p=3",
         "milestones": {

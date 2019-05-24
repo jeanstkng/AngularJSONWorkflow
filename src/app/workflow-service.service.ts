@@ -27,7 +27,9 @@ export class WorkflowServiceService {
 
         this.workflows = resp[1];
 
-        console.log(resp[1]);
+        //console.log(resp[1]);
+
+        console.log(resp[2]);
 
       });
 

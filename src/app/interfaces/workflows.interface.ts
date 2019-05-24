@@ -7,7 +7,7 @@ export interface JSONWorkflows {
 export interface Phases {
     Design: Design;
     Development: Design;
-    'Validation-Reg-Launch': ValidationRegLaunch;
+    ValidationRegLaunch: Design;
 }
 
 export interface Design {

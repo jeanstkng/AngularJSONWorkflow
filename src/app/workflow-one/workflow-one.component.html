@@ -1,17 +1,759 @@
+<div *ngIf="activityCounter == false && documentCounter == false && phase == 1">
+    <div class="row">
+      <div class="col-lg-12 text-center b4">
+        <h1 style="color: blue" class="mt-5"> <a (click)="seeUrl(workflow.workflows.url)" >{{ workflow.workflows.workflow }}</a> </h1>
+        <p class="lead"></p>
+      </div>
+    </div>
 
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h1 class="mt-5"> <a (click)="seeUrl(workflow.workflows.url)" >{{ workflow.workflows.workflow }}</a> </h1>
-        <p class="lead">{{ workflow.workflows.phases.Design.milestones[1].name }}</p>
+        <h3 style="color: darkred" (click)="seeUrl(workflow.workflows.phases.Design.url)"  > {{ workflow.workflows.phases.Design.id }} Design </h3>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="card-columns">
+
+        <div class="card text-center">
+            <div class="card-header">
+                <b>{{ workflow.workflows.phases.Design.milestones[1].name }}</b>
+            </div>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.Design.milestones[1].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+              2 weeks ago
+            </div>
+        </div>
+
+        <div class="card text-center">
+            <div class="card-header">
+                <b>{{ workflow.workflows.phases.Design.milestones[2].name }}</b>
+            </div>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.Design.milestones[2].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+              1 week ago
+            </div>
+        </div>
+
+        <div class="card text-center">
+            <div class="card-header">
+                <b>{{ workflow.workflows.phases.Design.milestones[3].name }}</b>
+            </div>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.Design.milestones[3].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+              3 days ago
+            </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-lg-6 text-center" >
+          <input (click)="seeActivities()" class="btn btn-primary" type="button" value="Activities">        
+      </div>
+      
+      <div class="col-lg-6 text-center" >
+          <input (click)="seeDocs()" class="btn btn-primary" type="button" value="Documents">        
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="col-lg-4 text-center" >
+          <input class="btn btn-primary disabled" type="button" value="Previous Phase">        
+      </div>
+      <div class="col-lg-4 text-center" >
+          <input (click)="changePhase(2)" class="btn btn-primary" type="button" value="Next Phase">        
+      </div>
+
+      <div class="col-lg-4">
+          <div class="dropdown open">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                    Select phase
+                  </button>
+              <div class="dropdown-menu" aria-labelledby="triggerId">
+                <button class="dropdown-item" (click)="changePhase(1)">Design</button>
+                <button class="dropdown-item" (click)="changePhase(2)">Development</button>
+                <button class="dropdown-item" (click)="changePhase(3)">Registration, Launch & Post Launch</button>
+              </div>
+            </div>
+      </div>
+    </div>
+
+</div>
+
+<div *ngIf="activityCounter == false && documentCounter == false && phase == 2">
+    <div class="row">
+      <div class="col-lg-12 text-center b4">
+        <h1 style="color: blue" class="mt-5"> <a (click)="seeUrl(workflow.workflows.url)" >{{ workflow.workflows.workflow }}</a> </h1>
+        <p class="lead"></p>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-lg-6">
-        <h3 (click)="seeUrl(workflow.workflows.phases.Design.url)"  > {{ workflow.workflows.phases.Design.id }} </h3>
+      <div class="col-lg-12 text-center">
+        <h3 style="color: darkred" (click)="seeUrl(workflow.workflows.phases.Development.url)"  > {{ workflow.workflows.phases.Development.id }} Development </h3>
       </div>
     </div>
 
-    <input type="button" value="Next phase" onclick="" class="">
+    <br>
+
+    <div class="row">
+      <div class="card-columns" style="column-count: 4 !important">
+
+        <div class="card text-center">
+            <div class="card-header">
+                <b>{{ workflow.workflows.phases.Development.milestones[1].name }}</b>
+            </div>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.Development.milestones[1].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+              2 weeks ago
+            </div>
+        </div>
+
+        <div class="card text-center">
+            <div class="card-header">
+                <b>{{ workflow.workflows.phases.Development.milestones[2].name }}</b>
+            </div>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.Development.milestones[2].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+              1 week ago
+            </div>
+        </div>
+
+        <div class="card text-center">
+            <div class="card-header">
+                <b>{{ workflow.workflows.phases.Development.milestones[3].name }}</b>
+            </div>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.Development.milestones[3].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+              3 days ago
+            </div>
+        </div>
+
+        <div class="card text-center">
+            <div class="card-header">
+                <b>{{ workflow.workflows.phases.Development.milestones[4].name }}</b>
+            </div>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.Development.milestones[4].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+              2 days ago
+            </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-lg-6 text-center" >
+          <input (click)="seeActivities()" class="btn btn-primary" type="button" value="Activities">        
+      </div>
+      
+      <div class="col-lg-6 text-center" >
+          <input (click)="seeDocs()" class="btn btn-primary" type="button" value="Documents">        
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="col-lg-4 text-center" >
+          <input (click)="changePhase(1)" class="btn btn-primary" type="button" value="Previous Phase">        
+      </div>
+      <div class="col-lg-4 text-center" >
+          <input (click)="changePhase(3)" class="btn btn-primary" type="button" value="Next Phase">        
+      </div>
+
+      <div class="col-lg-4">
+          <div class="dropdown open">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                    Select phase
+                  </button>
+              <div class="dropdown-menu" aria-labelledby="triggerId">
+                <button class="dropdown-item" (click)="changePhase(1)">Design</button>
+                <button class="dropdown-item" (click)="changePhase(2)">Development</button>
+                <button class="dropdown-item" (click)="changePhase(3)">Registration, Launch & Post Launch</button>
+              </div>
+            </div>
+      </div>
+    </div>
+
+</div>
+
+<div *ngIf="activityCounter == false && documentCounter == false && phase == 3">
+    <div class="row">
+      <div class="col-lg-12 text-center b4">
+        <h1 style="color: blue" class="mt-5"> <a (click)="seeUrl(workflow.workflows.url)" >{{ workflow.workflows.workflow }}</a> </h1>
+        <p class="lead"></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h3 style="color: darkred" (click)="seeUrl(workflow.workflows.phases.ValidationRegLaunch.url)"  > {{ workflow.workflows.phases.ValidationRegLaunch.id }} Registration, Launch & Post Launch </h3>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="card-columns">
+
+        <div class="card text-center">
+            <div class="card-header">
+                <b>{{ workflow.workflows.phases.ValidationRegLaunch.milestones[1].name }}</b>
+            </div>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.ValidationRegLaunch.milestones[1].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+              2 weeks ago
+            </div>
+        </div>
+
+        <div class="card text-center">
+            <div class="card-header">
+                <b>{{ workflow.workflows.phases.ValidationRegLaunch.milestones[2].name }}</b>
+            </div>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.ValidationRegLaunch.milestones[2].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+              1 week ago
+            </div>
+        </div>
+
+        <div class="card text-center">
+            <div class="card-header">
+                <b>{{ workflow.workflows.phases.ValidationRegLaunch.milestones[3].name }}</b>
+            </div>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.ValidationRegLaunch.milestones[3].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+              3 days ago
+            </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-lg-6 text-center" >
+          <input (click)="seeActivities()" class="btn btn-primary" type="button" value="Activities">        
+      </div>
+      
+      <div class="col-lg-6 text-center" >
+          <input (click)="seeDocs()" class="btn btn-primary" type="button" value="Documents">        
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="col-lg-4 text-center" >
+          <input (click)="changePhase(2)" class="btn btn-primary" type="button" value="Previous Phase">        
+      </div>
+      <div class="col-lg-4 text-center" >
+          <input class="btn btn-primary disabled" type="button" value="Next Phase">        
+      </div>
+
+      <div class="col-lg-4">
+          <div class="dropdown open">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                    Select phase
+                  </button>
+              <div class="dropdown-menu" aria-labelledby="triggerId">
+                <button class="dropdown-item" (click)="changePhase(1)">Design</button>
+                <button class="dropdown-item" (click)="changePhase(2)">Development</button>
+                <button class="dropdown-item" (click)="changePhase(3)">Registration, Launch & Post Launch</button>
+              </div>
+            </div>
+      </div>
+    </div>
+
+</div>
 
 
+<div *ngIf="activityCounter">
+
+    <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1 color="blue" class="mt-5"> <a>Activities</a> </h1>
+          <p class="lead"></p>
+        </div>
+      </div>
+
+<br>
+
+  <div *ngIf="phase == 1" class="">
+    <div class="card-columns">
+
+      <div class="card text-center">
+          <div class="card-header">
+              <b>Design</b>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"> {{ workflow.workflows.phases.Design.activities[1].name }} </h5>
+            <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+            <a (click)="seeUrl(workflow.workflows.phases.Design.activities[1].url)" class="btn btn-primary text-white">Start</a>
+          </div>
+          <div class="card-footer text-muted">
+            2 weeks ago
+          </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div *ngIf="phase == 2" class="row">
+      <div class="card-columns" style="column-count: 6 !important">
+
+          <div class="card text-center">
+              <div class="card-header">
+                  <b>Development</b>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title"> {{ workflow.workflows.phases.Development.activities[1].name }} </h6>
+                <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                <a (click)="seeUrl(workflow.workflows.phases.Development.activities[1].url)" class="btn btn-primary text-white">Start</a>
+              </div>
+              <div class="card-footer text-muted">
+                2 weeks ago
+              </div>
+          </div>
+
+          <div class="card text-center">
+              <div class="card-header" style="background-color: #008000a3 !important">
+                  <b>Development</b>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title"> {{ workflow.workflows.phases.Development.activities[2].name }} </h6>
+                <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                <a (click)="seeUrl(workflow.workflows.phases.Development.activities[2].url)" class="btn btn-primary text-white">Start</a>
+              </div>
+              <div class="card-footer text-muted">
+                2 weeks ago
+              </div>
+          </div>
+
+          <div class="card text-center">
+              <div class="card-header">
+                  <b>Development</b>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title"> {{ workflow.workflows.phases.Development.activities[3].name }} </h6>
+                <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                <a (click)="seeUrl(workflow.workflows.phases.Development.activities[3].url)" class="btn btn-primary text-white">Start</a>
+              </div>
+              <div class="card-footer text-muted">
+                2 weeks ago
+              </div>
+          </div>
+
+          <div class="card text-center">
+              <div class="card-header">
+                  <b>Development</b>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title"> {{ workflow.workflows.phases.Development.activities[4].name }} </h6>
+                <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                <a (click)="seeUrl(workflow.workflows.phases.Development.activities[4].url)" class="btn btn-primary text-white">Start</a>
+              </div>
+              <div class="card-footer text-muted">
+                2 weeks ago
+              </div>
+          </div>
+
+          <div class="card text-center">
+              <div class="card-header">
+                  <b>Development</b>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title"> {{ workflow.workflows.phases.Development.activities[5].name }} </h6>
+                <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                <a (click)="seeUrl(workflow.workflows.phases.Development.activities[5].url)" class="btn btn-primary text-white">Start</a>
+              </div>
+              <div class="card-footer text-muted">
+                2 weeks ago
+              </div>
+          </div>
+
+          <div class="card text-center">
+              <div class="card-header">
+                  <b>Development</b>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title"> {{ workflow.workflows.phases.Development.activities[6].name }} </h6>
+                <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                <a (click)="seeUrl(workflow.workflows.phases.Development.activities[6].url)" class="btn btn-primary text-white">Start</a>
+              </div>
+              <div class="card-footer text-muted">
+                2 weeks ago
+              </div>
+          </div>
+
+          <div class="card text-center">
+              <div class="card-header">
+                  <b>Development</b>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title"> {{ workflow.workflows.phases.Development.activities[7].name }} </h6>
+                <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                <a (click)="seeUrl(workflow.workflows.phases.Development.activities[7].url)" class="btn btn-primary text-white">Start</a>
+              </div>
+              <div class="card-footer text-muted">
+                2 weeks ago
+              </div>
+          </div>
+
+          <div class="card text-center">
+              <div class="card-header">
+                  <b>Development</b>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title"> {{ workflow.workflows.phases.Development.activities[8].name }} </h6>
+                <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                <a (click)="seeUrl(workflow.workflows.phases.Development.activities[8].url)" class="btn btn-primary text-white">Start</a>
+              </div>
+              <div class="card-footer text-muted">
+                2 weeks ago
+              </div>
+          </div>
+
+          <div class="card text-center">
+              <div class="card-header">
+                  <b>Development</b>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title"> {{ workflow.workflows.phases.Development.activities[9].name }} </h6>
+                <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                <a (click)="seeUrl(workflow.workflows.phases.Development.activities[9].url)" class="btn btn-primary text-white">Start</a>
+              </div>
+              <div class="card-footer text-muted">
+                2 weeks ago
+              </div>
+          </div>
+
+          <div class="card text-center">
+              <div class="card-header">
+                  <b>Development</b>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title"> {{ workflow.workflows.phases.Development.activities[10].name }} </h6>
+                <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                <a (click)="seeUrl(workflow.workflows.phases.Development.activities[10].url)" class="btn btn-primary text-white">Start</a>
+              </div>
+              <div class="card-footer text-muted">
+                2 weeks ago
+              </div>
+          </div>
+
+          <div class="card text-center">
+              <div class="card-header">
+                  <b>Development</b>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title"> {{ workflow.workflows.phases.Development.activities[11].name }} </h6>
+                <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                <a (click)="seeUrl(workflow.workflows.phases.Development.activities[11].url)" class="btn btn-primary text-white">Start</a>
+              </div>
+              <div class="card-footer text-muted">
+                2 weeks ago
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div *ngIf="phase == 3" class="">
+      <div class="card-columns" style="column-count: 6 !important">
+  
+        <div class="card text-center">
+            <div class="card-header">
+                <b>Registration, Launch & Post Launch</b>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"> {{ workflow.workflows.phases.ValidationRegLaunch.activities[1].name }} </h5>
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.ValidationRegLaunch.activities[1].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+              2 weeks ago
+            </div>
+        </div>
+  
+        <div class="card text-center">
+            <div class="card-header">
+                <b>Registration, Launch & Post Launch</b>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"> {{ workflow.workflows.phases.ValidationRegLaunch.activities[2].name }} </h5>
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.ValidationRegLaunch.activities[2].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+              2 weeks ago
+            </div>
+        </div>
+
+        <div class="card text-center">
+            <div class="card-header">
+                <b>Registration, Launch & Post Launch</b>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"> {{ workflow.workflows.phases.ValidationRegLaunch.activities[3].name }} </h5>
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.ValidationRegLaunch.activities[3].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+              2 weeks ago
+            </div>
+        </div>
+
+        <div class="card text-center">
+            <div class="card-header">
+                <b>Registration, Launch & Post Launch</b>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"> {{ workflow.workflows.phases.ValidationRegLaunch.activities[4].name }} </h5>
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.ValidationRegLaunch.activities[4].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+              2 weeks ago
+            </div>
+        </div>
+
+        <div class="card text-center">
+            <div class="card-header">
+                <b>Registration, Launch & Post Launch</b>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"> {{ workflow.workflows.phases.ValidationRegLaunch.activities[5].name }} </h5>
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.ValidationRegLaunch.activities[5].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+              2 weeks ago
+            </div>
+        </div>
+
+        <div class="card text-center">
+            <div class="card-header">
+                <b>Registration, Launch & Post Launch</b>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"> {{ workflow.workflows.phases.ValidationRegLaunch.activities[6].name }} </h5>
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.ValidationRegLaunch.activities[6].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+              2 weeks ago
+            </div>
+        </div>
+
+        <div class="card text-center">
+            <div class="card-header">
+                <b>Registration, Launch & Post Launch</b>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"> {{ workflow.workflows.phases.ValidationRegLaunch.activities[1].name }} </h5>
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.ValidationRegLaunch.activities[1].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+              2 weeks ago
+            </div>
+        </div>
+      </div>
+    </div>
+  
+  <div class="row">
+    <div class="col-lg-12 text-center" >
+        <input (click)="goBack()" class="btn btn-primary" type="button" value="Back">        
+    </div>
+  </div>
+
+</div>
+
+<div *ngIf="documentCounter">
+
+    <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1 color="blue" class="mt-5"> <a>Documents</a> </h1>
+          <p class="lead"></p>
+        </div>
+      </div>
+
+<br>
+
+  <div class="" *ngIf="phase == 1">
+    <div class="card-columns">
+
+      <div class="card text-center">
+          <div class="card-header">
+              <b>Design</b>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"> {{ workflow.workflows.phases.Design.documents[1].name }} </h5>
+            <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+            <a (click)="seeUrl(workflow.workflows.phases.Design.documents[1].url)" class="btn btn-primary text-white">Start</a>
+          </div>
+          <div class="card-footer text-muted">
+          </div>
+      </div>
+
+      <div class="card text-center">
+          <div class="card-header">
+              <b>Design</b>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"> {{ workflow.workflows.phases.Design.documents[2].name }} </h5>
+            <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+            <a (click)="seeUrl(workflow.workflows.phases.Design.documents[2].url)" class="btn btn-primary text-white">Start</a>
+          </div>
+          <div class="card-footer text-muted">
+          </div>
+      </div>
+
+      <div class="card text-center">
+          <div class="card-header">
+              <b>Design</b>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"> {{ workflow.workflows.phases.Design.documents[3].name }} </h5>
+            <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+            <a (click)="seeUrl(workflow.workflows.phases.Design.documents[3].url)" class="btn btn-primary text-white">Start</a>
+          </div>
+          <div class="card-footer text-muted">
+          </div>
+      </div>
+
+    </div>
+  </div>
+  
+  <div class="" *ngIf="phase == 2">
+      <div class="card-columns" style="column-count: 4 !important">
+  
+        <div class="card text-center">
+            <div class="card-header">
+                <b>Development</b>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"> {{ workflow.workflows.phases.Development.documents[1].name }} </h5>
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.Development.documents[1].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+            </div>
+        </div>
+  
+        <div class="card text-center">
+            <div class="card-header">
+                <b>Development</b>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"> {{ workflow.workflows.phases.Development.documents[2].name }} </h5>
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.Development.documents[2].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+            </div>
+        </div>
+  
+        <div class="card text-center">
+            <div class="card-header">
+                <b>Development</b>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"> {{ workflow.workflows.phases.Development.documents[3].name }} </h5>
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.Development.documents[3].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+            </div>
+        </div>
+  
+        <div class="card text-center">
+            <div class="card-header">
+                <b>Development</b>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"> {{ workflow.workflows.phases.Development.documents[4].name }} </h5>
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.Development.documents[4].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+            </div>
+        </div>
+
+      </div>
+  </div>
+
+  <div class="" *ngIf="phase == 3">
+      <div class="card-columns">
+  
+        <div class="card text-center">
+            <div class="card-header">
+                <b>Registration, Launch & Post Launch</b>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"> {{ workflow.workflows.phases.ValidationRegLaunch.documents[1].name }} </h5>
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a (click)="seeUrl(workflow.workflows.phases.ValidationRegLaunch.documents[1].url)" class="btn btn-primary text-white">Start</a>
+            </div>
+            <div class="card-footer text-muted">
+            </div>
+          </div>
+  
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="col-lg-12 text-center" >
+        <input (click)="goBack()" class="btn btn-primary" type="button" value="Back">        
+    </div>
+  </div>
+
+</div>
